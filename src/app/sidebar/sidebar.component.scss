@@ -1,0 +1,15 @@
+:host{
+    width: 220px;
+    flex: none;
+}
+
+nav {
+    padding-top: 65px;
+    a{
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        text-decoration: none;
+        text-align: center;
+    }
+}

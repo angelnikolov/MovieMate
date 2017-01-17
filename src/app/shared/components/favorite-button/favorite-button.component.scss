@@ -1,0 +1,20 @@
+:host{
+    display: flex;
+    &:hover{
+        div{
+            opacity: 1;
+        }
+    }
+}
+
+div{
+    opacity: 0.3;
+    &.active{
+        opacity: 1;
+    }
+}
+svg{
+    width: 20px;
+    height: 20px;
+    fill: #FFEE58;
+}

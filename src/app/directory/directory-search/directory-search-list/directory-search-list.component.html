@@ -1,0 +1,5 @@
+  <p (click)="selectSearchItem(item.id)" [class.selected]="selectedItemIndex === index" *ngFor="let item of items; let index = index;">
+    <img [src]="'https://image.tmdb.org/t/p//w300/'+item.poster_path" />
+    <br>
+     {{item.title}} {{item.id}}
+  </p>

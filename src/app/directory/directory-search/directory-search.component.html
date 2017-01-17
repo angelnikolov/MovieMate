@@ -1,0 +1,5 @@
+<input #searchInput type="text" placeholder="Search" [value]="search" [formControl]="searchControl" (focusin)="expandList()"
+/>
+
+<mm-directory-search-list (onSearchItemSelected)="openDetails($event)" [items]="results" [selectedItemIndex]="selectedItemIndex"
+    *ngIf="opened"></mm-directory-search-list>

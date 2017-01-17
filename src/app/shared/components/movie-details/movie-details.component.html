@@ -1,0 +1,12 @@
+<div>
+    <a (click)="closeDetails($event)">X</a>
+    <a (click)="toggleFavorite()" *ngIf="!movie?.isFavorited">Add to favorites</a>
+    <a (click)="toggleFavorite()" *ngIf="movie?.isFavorited">Remove from favorites</a>
+    <a (click)="getSimilarMovies()">Find similar movies</a>
+    <a (click)="getRecommendedMovies()">Find recommended movies</a>
+    <div (click)="$event.stopPropagation()"> {{movie?.title}}
+        <br/><img [src]="'https://image.tmdb.org/t/p//w500/'+movie?.poster_path" />
+        <br> {{movie?.overview}}
+    </div>
+    {{loading}}
+</div>

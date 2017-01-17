@@ -1,0 +1,9 @@
+<mm-movie-card  
+    class="center-xs"
+    *ngFor="let movie of movies" 
+    [movie]="movie"
+    (click)="selectMovie(movie)"
+    [size]="'small'"
+> 
+</mm-movie-card>
+

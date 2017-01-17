@@ -1,0 +1,15 @@
+:host{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    flex: 1;
+}
+img{
+    max-width: 250px;
+}
+.card-holder{
+    margin-bottom: 25px;
+    transform-style: preserve-3d;
+    transform: perspective(800px);
+}

@@ -1,0 +1,23 @@
+<mm-alt-listing 
+    *ngIf="movie?.additionalMovies"
+    [@slideAnimation]
+    (onMovieSelected)="selectMovie($event)"
+    [movies]="movie?.additionalMovies"
+>
+</mm-alt-listing>
+
+<mm-movie-details 
+    (onDetailsClosed)="closeDetails($event)" 
+    (onFavoriteToggled)="toggleFavorite($event)" 
+    (onSimilarMoviesRequested)="getSimilarMovies($event)" 
+    (onRecommendedMoviesRequested)="getRecommendedMovies($event)" 
+    [movie]="movie"
+>
+</mm-movie-details>
+
+<mm-overlay 
+    [@fadeIn] 
+    *ngIf="isOverlayShown" 
+    (click)="closeDetails()"
+>
+</mm-overlay>

@@ -1,0 +1,17 @@
+:host{
+    cursor: pointer;
+    justify-content: center;
+    flex: auto;
+    z-index: 1;
+    border: 1px solid #cecece;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background: #f9f9f9;
+    padding: 1.5rem;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    flex: 0.8;
+    text-align: center;
+    transform-style: preserve-3d;
+    transform: perspective(800px);
+}

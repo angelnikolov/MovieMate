@@ -1,1 +1,28 @@
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('assets/fonts/HelveticaNeueLight.ttf'); /* IE9 Compat Modes */
+  src: url('assets/fonts/HelveticaNeueLight.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+
 /* You can add global styles to this file, and also import other style files */
+body, html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: HelveticaNeue;
+    background-color: #f9f9f9;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.card__shine{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+
+    background: linear-gradient(90deg, rgba(255,255,255,.5) 0%,rgba(255,255,255,0) 60%);
+    z-index: 3;
+    transition: 0.25s background;
+}

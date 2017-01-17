@@ -1,0 +1,15 @@
+:host{
+    flex: 0.2;
+    z-index: 1;
+    background-color: #fff;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transform: translateX(10%);
+}
+
+mm-movie-card{
+    margin-bottom: 25px;
+}
