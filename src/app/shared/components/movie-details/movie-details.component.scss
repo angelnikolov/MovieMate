@@ -3,10 +3,8 @@
     justify-content: center;
     flex: auto;
     z-index: 1;
-    border: 1px solid #cecece;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 16px rgba(0,0,0,0.7523);
     background: #f9f9f9;
-    padding: 1.5rem;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -14,4 +12,41 @@
     text-align: center;
     transform-style: preserve-3d;
     transform: perspective(800px);
+}
+
+.details{
+    &__navigation{
+        position: absolute;
+        top: 650px;
+        z-index: 2;
+    }
+    &__title{
+        position: absolute;
+        color: #fff;
+        top: 60px;
+        width: 100%;
+        text-align: center;
+        font-size: 31px;
+        z-index: 1;
+    }
+    &__cover{
+        position: relative;
+        top: 0;
+        height: 600px;
+        width: 100%;
+    }
+    &__image{
+        width: 410px;
+        position: absolute;
+        top: 120px;
+        right: 166px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    &__description{
+        position: relative;
+        padding: 170px 70px 0;
+        text-align: left;
+        font-size: 18px;
+        line-height: 20px;
+    }
 }

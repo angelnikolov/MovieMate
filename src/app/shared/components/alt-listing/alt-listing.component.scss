@@ -1,12 +1,12 @@
 :host{
     flex: 0.2;
     z-index: 1;
-    background-color: #fff;
+    background-color: #dedede;
     overflow: auto;
     display: flex;
     flex-direction: column;
     padding-top: 1rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: -11px 0px 30px 1px rgba(0, 0, 0, 0.19), -3px 0px 6px rgba(0, 0, 0, 0.53);
     transform: translateX(10%);
 }
 

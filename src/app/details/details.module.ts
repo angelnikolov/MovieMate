@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DetailsComponent } from './details.component';
 import { SharedModule } from '../shared'
+import { MovieDetailsComponent } from '../shared/components/movie-details/movie-details.component'
 
 const nowPlayingRoutes: Routes = [
   {
@@ -19,7 +20,9 @@ const nowPlayingRoutes: Routes = [
     SharedModule
   ],
   declarations: [
-    DetailsComponent
-  ]
+    DetailsComponent,
+    MovieDetailsComponent
+  ],
+  exports: [MovieDetailsComponent]
 })
 export class DetailsModule { }
