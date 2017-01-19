@@ -6,6 +6,7 @@ import { OverlayComponent } from './overlay/overlay.component'
 import { AltListingComponent } from './alt-listing/alt-listing.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { FavoriteButtonComponent } from './favorite-button/favorite-button.component';
+import { ImageComponent } from './image/image.component';
 
 import { DirectivesModule } from '../directives'
 
@@ -20,7 +21,8 @@ import { DirectivesModule } from '../directives'
     AltListingComponent,
     OverlayComponent,
     SpinnerComponent,
-    FavoriteButtonComponent
+    FavoriteButtonComponent,
+    ImageComponent
   ],
   exports: [
     MovieListingComponent,
@@ -28,7 +30,8 @@ import { DirectivesModule } from '../directives'
     AltListingComponent,
     OverlayComponent,
     SpinnerComponent,
-    FavoriteButtonComponent
+    FavoriteButtonComponent,
+    ImageComponent
   ]
 })
 export class ComponentsModule { }

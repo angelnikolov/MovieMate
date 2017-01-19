@@ -1,11 +1,12 @@
 <!--<a (click)="addToFavorites($event, movie)" *ngIf="!movie.isFavorited">Add to favorites</a>
 <a (click)="addToFavorites($event, movie)" *ngIf="movie.isFavorited">Remove from favorites</a>-->
 <div class="content">
-    <img [class.small]="size==='small'" [src]="'https://image.tmdb.org/t/p//w300/'+movie.poster_path" />
     <mm-favorite-button 
     *ngIf="size!=='small'" 
     [isFavorited]="movie.isFavorited"
     (onFavoriteButtonClicked)="addToFavorites($event, movie)"></mm-favorite-button>
+
+    <mm-image [class.small]="size==='small'" [src]="'https://image.tmdb.org/t/p//w300/'+movie.poster_path" ></mm-image>
 </div>
 <div class="title" 
     *ngIf="size==='small'" >

@@ -15,7 +15,23 @@ export class MovieDetailsComponent implements OnInit, OnChanges {
   @Output() onSimilarMoviesRequested: EventEmitter<any> = new EventEmitter<any>();
   @Output() onRecommendedMoviesRequested: EventEmitter<any> = new EventEmitter<any>();
   public loading: Boolean = false;
+  morphBackground() {
+    alert('background morphed!');
+    var vibrant = new Vibrant(this.elementRef.nativeElement.querySelector('img'), 64, 1);
+    var swatches = vibrant.getSwatches((palettes: any) => {
+      console.log(palettes);
+    });
+    console.log(swatches);
+    var swatches = vibrant.swatches()
+    for (var swatch in swatches) {
 
+      if (swatches.hasOwnProperty(swatch) && swatches[swatch])
+        console.log('%c+' + swatch, `background: ${swatches[swatch].getHex()}`)
+    }
+    console.log(`linear-gradient(-212.314deg, ${swatches['Vibrant'].getHex()} 0%, ${swatches['DarkVibrant'].getHex()} 0%);`);
+    this.elementRef.nativeElement.querySelector('.details__cover').style.background = `linear-gradient(to bottom right, ${swatches['DarkVibrant'].getHex()} 65%, ${swatches['Vibrant'].getHex()})`;
+
+  }
   toggleFavorite() {
     this.onFavoriteToggled.emit(this.movie);
   }
@@ -42,22 +58,6 @@ export class MovieDetailsComponent implements OnInit, OnChanges {
   }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      var vibrant = new Vibrant(this.elementRef.nativeElement.querySelector('img'), 64, 1);
-      var swatches = vibrant.getSwatches((palettes: any) => {
-        console.log(palettes);
-      });
-      console.log(swatches);
-      var swatches = vibrant.swatches()
-      for (var swatch in swatches) {
-
-        if (swatches.hasOwnProperty(swatch) && swatches[swatch])
-          console.log('%c+' + swatch, `background: ${swatches[swatch].getHex()}`)
-      }
-      console.log(`linear-gradient(-212.314deg, ${swatches['Vibrant'].getHex()} 0%, ${swatches['DarkVibrant'].getHex()} 0%);`);
-      this.elementRef.nativeElement.querySelector('.details__cover').style.background = `linear-gradient(to bottom right, ${swatches['DarkVibrant'].getHex()} 65%, ${swatches['Vibrant'].getHex()})`;
-
-    }, 1000)
 
   }
 

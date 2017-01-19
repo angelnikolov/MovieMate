@@ -4,7 +4,7 @@
         class="large details__navigation-item"
         [isFavorited]="movie?.isFavorited"
         (onFavoriteButtonClicked)="toggleFavorite($event)"></mm-favorite-button>
-        
+
         <a class="details__navigation-item"
             (click)="getSimilarMovies()">Similar</a>
         <a class="details__navigation-item"
@@ -13,7 +13,8 @@
     <div (click)="$event.stopPropagation()"> 
         <div class="details__title">{{movie?.title}}</div>
         <div class="details__cover"></div>
-        <img class="details__image" [src]="'https://image.tmdb.org/t/p//w500/'+movie?.poster_path" crossOrigin = "Anonymous" />
+
+        <mm-image class="details__image" [class.small]="size==='small'" [src]="'https://image.tmdb.org/t/p//w300/'+movie?.poster_path" (onLoaded)="morphBackground()"></mm-image>
         <div class="details__description">{{movie?.overview}}</div>
     </div>
 </article>

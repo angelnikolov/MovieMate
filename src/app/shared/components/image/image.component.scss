@@ -1,0 +1,11 @@
+:host{
+    &.small{
+        img{
+            max-width: 140px;
+        }
+    }
+}
+img{
+    width: 100%;
+    display: block;
+}

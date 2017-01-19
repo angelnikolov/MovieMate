@@ -35,12 +35,6 @@
     align-items: center;
     position: relative;
 }
-img{
-    width: 100%;
-    &.small{
-        max-width: 140px;
-    }
-}
 
 mm-favorite-button{
     z-index: 4;
