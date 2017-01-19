@@ -1,15 +1,32 @@
 :host{
     width: 220px;
     flex: none;
+    box-shadow: 5px 10px 20px rgba(0,0,0,0.02), 3px 6px 6px rgba(0,0,0,0.03);
 }
 
 nav {
-    padding-top: 65px;
     a{
+        padding: 0 15px;
         display: block;
         height: 50px;
         line-height: 50px;
         text-decoration: none;
+        color: #444;
         text-align: center;
+        &.active{
+            background: #42A5F5;
+            color: #fff;
+        }
     }
+}
+
+.logo{
+    height: 65px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    background: #42A5F5;
 }

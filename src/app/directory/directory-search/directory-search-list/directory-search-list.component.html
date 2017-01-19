@@ -1,5 +1,8 @@
-  <p (click)="selectSearchItem(item.id)" [class.selected]="selectedItemIndex === index" *ngFor="let item of items; let index = index;">
-    <img [src]="'https://image.tmdb.org/t/p//w300/'+item.poster_path" />
-    <br>
-     {{item.title}} {{item.id}}
-  </p>
+<ul class="search-list">
+  <li class="search-list__item" (click)="selectSearchItem(item.id)" [class.search-list__item--selected]="selectedItemIndex === index" *ngFor="let item of items; let index = index;">
+      <img class="search-list__photo" [src]="'https://image.tmdb.org/t/p//w300/'+item.poster_path" />
+      <span class="search-list__title">
+        {{item.title}}
+      </span>
+  </li>
+</ul>

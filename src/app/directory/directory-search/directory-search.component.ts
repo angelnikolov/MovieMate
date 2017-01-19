@@ -32,6 +32,7 @@ export class DirectorySearchComponent implements OnInit {
   }
   @ViewChild('searchInput') searchInput: ElementRef;
   public expandList() {
+    if(this.search)
     this.opened = true;
   }
   @HostListener('document:click', ['$event'])

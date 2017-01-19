@@ -14,7 +14,7 @@ export class AuthService {
     return this.http.get(`https://api.themoviedb.org/3/authentication/token/new?api_key=ca49bfda426c4e87678009d2dfc4361e`)
       .map((response: any) => {
         let token = response.json().request_token
-        let redirectTo = `http://localhost:4200/login`;
+        let redirectTo = `http://10.0.0.83:4200/login`;
         location.href = `https://www.themoviedb.org/authenticate/${token}?redirect_to=${redirectTo}`, ``;
       });
   }

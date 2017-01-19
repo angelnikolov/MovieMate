@@ -26,7 +26,8 @@ export class DirectorySearchListComponent implements OnInit {
     if (changes['selectedItemIndex']) {
       let currentIndex = changes['selectedItemIndex'].currentValue;
       if (currentIndex && !changes['selectedItemIndex'].isFirstChange()) {
-        let selectedItem = this.elementRef.nativeElement.querySelectorAll('p')[currentIndex];
+        let selectedItem:HTMLElement = this.elementRef.nativeElement.querySelectorAll('.search-list__item')[currentIndex];
+        
         selectedItem.scrollIntoView();
       }
     }

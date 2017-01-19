@@ -5,6 +5,12 @@
             opacity: 1;
         }
     }
+    &.large {
+        svg{
+            width: 25px;
+            height: 25px;
+        }
+    }
 }
 
 div{

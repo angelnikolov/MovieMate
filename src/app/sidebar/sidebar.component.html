@@ -1,6 +1,8 @@
+
 <nav>
-  <a [routerLink]="['/directory/now-playing']"> Now Playing Movies</a>
-  <a [routerLink]="['/directory/favorited']"> Favorited Movies </a>
-  <a [routerLink]="['/directory/popular']">  
+  <div class="logo">MovieMate</div>
+  <a routerLinkActive="active" [routerLink]="['/directory/now-playing']"> Now Playing Movies</a>
+  <a routerLinkActive="active" [routerLink]="['/directory/favorited']"> Favorited Movies </a>
+  <a routerLinkActive="active" [routerLink]="['/directory/popular']">  
   Popular Movies </a>
 </nav>

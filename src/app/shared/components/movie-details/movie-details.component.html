@@ -1,10 +1,14 @@
 <article class="details">
     <div class="details__navigation">
-        <a (click)="closeDetails($event)">X</a>
-        <a (click)="toggleFavorite()" *ngIf="!movie?.isFavorited">Add to favorites</a>
-        <a (click)="toggleFavorite()" *ngIf="movie?.isFavorited">Remove from favorites</a>
-        <a (click)="getSimilarMovies()">Find similar movies</a>
-        <a (click)="getRecommendedMovies()">Find recommended movies</a>
+        <mm-favorite-button 
+        class="large details__navigation-item"
+        [isFavorited]="movie?.isFavorited"
+        (onFavoriteButtonClicked)="toggleFavorite($event)"></mm-favorite-button>
+        
+        <a class="details__navigation-item"
+            (click)="getSimilarMovies()">Similar</a>
+        <a class="details__navigation-item"
+            (click)="getRecommendedMovies()">Recommended</a>
     </div>
     <div (click)="$event.stopPropagation()"> 
         <div class="details__title">{{movie?.title}}</div>

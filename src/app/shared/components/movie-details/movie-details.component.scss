@@ -17,17 +17,30 @@
 .details{
     &__navigation{
         position: absolute;
-        top: 650px;
+        top: 0;
         z-index: 2;
+        width: 325px;
+        padding: 10px 15px;
+        left: 0px;
+        display: flex;
+        align-items: center;
+    }
+    &__navigation-item{
+        display: flex;
+        text-align: right;
+        float: left;
+        margin-right: 15px;
+        color: #fff;
     }
     &__title{
-        position: absolute;
+        position: right;
         color: #fff;
         top: 60px;
         width: 100%;
         text-align: center;
         font-size: 31px;
         z-index: 1;
+        position: absolute;
     }
     &__cover{
         position: relative;
@@ -46,7 +59,7 @@
         position: relative;
         padding: 170px 70px 0;
         text-align: left;
-        font-size: 18px;
-        line-height: 20px;
+        font-size: 17px;
+        line-height: 19px;
     }
 }
