@@ -73,7 +73,7 @@ export class DirectorySearchComponent implements OnInit {
       .switchMap((searchTerm: string) => {
         this.expandList();
         this.search = searchTerm;
-        return this.http.get(`https://api.themoviedb.org/3/search/movie?query=${searchTerm}&api_key=ca49bfda426c4e87678009d2dfc4361e`)
+        return this.http.get(`https://api.themoviedb.org/3/search/movie?query=${searchTerm}`)
       })
       .switchMap((response: any) => { return Observable.of(response.json().results) })
       .subscribe((results: any) => {

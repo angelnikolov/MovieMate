@@ -18,7 +18,7 @@ export class MovieService {
         return this.accountService.getAccountId()
             // .delay(5000)
             .switchMap((account_id: number) =>
-                this.http.get(`https://api.themoviedb.org/3/account/${account_id}/favorite/movies?api_key=ca49bfda426c4e87678009d2dfc4361e&language=en-US&page=1&session_id=${localStorage.getItem('session_id')}`))
+                this.http.get(`/account/${account_id}/favorite/movies?language=en-US&page=1`))
             .map((response: any) =>
                 response.json()
                     .results.map((movie: any) => {
@@ -28,10 +28,10 @@ export class MovieService {
     }
 
     public getMovieDetails(id: number) {
-        return this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=ca49bfda426c4e87678009d2dfc4361e`)
+        return this.http.get(`/movie/${id}`)
             .switchMap(res => {
                 let movie = res.json();
-                return this.http.get(`https://api.themoviedb.org/3/movie/${movie.id}/account_states?api_key=ca49bfda426c4e87678009d2dfc4361e&session_id=${localStorage.getItem('session_id')}`)
+                return this.http.get(`/movie/${movie.id}/account_states`)
                     .map((results: any) => {
                         movie.isFavorited = results.json().favorite;
                         return movie;
@@ -40,10 +40,10 @@ export class MovieService {
 
     }
     public favorMovie(movie: any) {
-        return this.http.get(`https://api.themoviedb.org/3/account?api_key=ca49bfda426c4e87678009d2dfc4361e&session_id=${localStorage.getItem('session_id')}`)
+        return this.http.get(`/account`)
             .switchMap((response: any) => Observable.of(response.json().id))
             .switchMap((account_id: number) =>
-                this.http.post(`https://api.themoviedb.org/3/account/${account_id}/favorite?api_key=ca49bfda426c4e87678009d2dfc4361e&session_id=${localStorage.getItem('session_id')}`,
+                this.http.post(`/account/${account_id}/favorite`,
                     {
                         "media_type": "movie",
                         "media_id": movie.id,
@@ -53,12 +53,12 @@ export class MovieService {
 
 
     public getSimilarMovies(movie: any) {
-        return this.http.get(` https://api.themoviedb.org/3/movie/${movie.id}/similar?api_key=ca49bfda426c4e87678009d2dfc4361e&language=en-US&page=1`)
+        return this.http.get(`/movie/${movie.id}/similar?language=en-US&page=1`)
             .switchMap((response: any) => Observable.of(response.json().results));
     }
 
     public getRecommendedMovies(movie: any) {
-        return this.http.get(` https://api.themoviedb.org/3/movie/${movie.id}/recommendations?api_key=ca49bfda426c4e87678009d2dfc4361e&language=en-US&page=1`)
+        return this.http.get(`/movie/${movie.id}/recommendations?language=en-US&page=1`)
             .switchMap((response: any) => Observable.of(response.json().results));
     }
 
@@ -66,7 +66,7 @@ export class MovieService {
         return this.getAccountFavoriteMovies()
             .map((movies: Array<any>) => movies.map((movie: any) => movie.id))
             .switchMap((accountFavoriteIds: any) => {
-                return this.http.get(`https://api.themoviedb.org/3/movie/${type}?api_key=ca49bfda426c4e87678009d2dfc4361e&language=en-US&page=1`)
+                return this.http.get(`/movie/${type}?language=en-US&page=1`)
                     .map((response: any) => {
                         return response.json().results.map((movie: any) => {
                             movie.isFavorited = (accountFavoriteIds.indexOf(movie.id) !== -1 ? true : false);

@@ -1,1 +1,3 @@
-<img [src]="src" (load)="loadImage()" crossOrigin = "Anonymous" />
+<img  crossOrigin = "Anonymous" *ngIf="!loadFailed" [src]="src" (load)="loadImage()" (error)="failedLoadImage($event)" [hidden]="!loaded"/>
+<img *ngIf="loadFailed" src="assets/images/noImg.jpg"/>
+<mm-spinner [class]="size" *ngIf="!loaded && !loadFailed"></mm-spinner>

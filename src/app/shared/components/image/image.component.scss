@@ -1,5 +1,14 @@
 :host{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #fff;
+    &.large{
+        min-height: 580px;
+    }
     &.small{
+        height: 210px;
         img{
             max-width: 140px;
         }
@@ -8,4 +17,7 @@
 img{
     width: 100%;
     display: block;
+    &[hidden]{
+        opacity: 0;
+    }
 }

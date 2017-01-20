@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TintDirective } from './tint.directive';
+import { AutoFocusDirective } from './auto-focus.directive';
 
 @NgModule({
     imports: [
         CommonModule
     ],
     declarations: [
-        TintDirective
+        TintDirective,
+        AutoFocusDirective
     ],
     exports: [
-        TintDirective
+        TintDirective,
+        AutoFocusDirective
     ]
 })
 export class DirectivesModule { }

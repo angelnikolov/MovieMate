@@ -9,11 +9,13 @@ import { FavoriteButtonComponent } from './favorite-button/favorite-button.compo
 import { ImageComponent } from './image/image.component';
 
 import { DirectivesModule } from '../directives'
+import { PipesModule } from '../pipes'
 
 @NgModule({
   imports: [
     CommonModule,
-    DirectivesModule
+    DirectivesModule,
+    PipesModule
   ],
   declarations: [
     MovieListingComponent,

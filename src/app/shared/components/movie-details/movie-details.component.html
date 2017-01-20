@@ -14,7 +14,9 @@
         <div class="details__title">{{movie?.title}}</div>
         <div class="details__cover"></div>
 
-        <mm-image class="details__image" [class.small]="size==='small'" [src]="'https://image.tmdb.org/t/p//w300/'+movie?.poster_path" (onLoaded)="morphBackground()"></mm-image>
+        <mm-image class="details__image large" *ngIf="movie" [size]="big" [src]="'https://image.tmdb.org/t/p//w300/'+movie?.poster_path" 
+        (onLoadFailed)="morphBackground(true)"
+        (onLoaded)="morphBackground()"></mm-image>
         <div class="details__description">{{movie?.overview}}</div>
     </div>
 </article>

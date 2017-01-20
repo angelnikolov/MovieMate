@@ -6,7 +6,7 @@
     [isFavorited]="movie.isFavorited"
     (onFavoriteButtonClicked)="addToFavorites($event, movie)"></mm-favorite-button>
 
-    <mm-image [class.small]="size==='small'" [src]="'https://image.tmdb.org/t/p//w300/'+movie.poster_path" ></mm-image>
+    <mm-image [class.small]="size==='small'" [size]="small" [src]="'https://image.tmdb.org/t/p//w300/'+movie.poster_path" ></mm-image>
 </div>
 <div class="title" 
     *ngIf="size==='small'" >

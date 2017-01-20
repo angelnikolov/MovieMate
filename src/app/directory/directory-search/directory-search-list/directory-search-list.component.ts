@@ -10,6 +10,7 @@ import { Observable } from 'rxjs/Observable';
 export class DirectorySearchListComponent implements OnInit {
   @Input() items: Array<any>;
   @Input() selectedItemIndex: number;
+  @Input() searchText: string;
 
   @Output() onSearchItemSelected: EventEmitter<any> = new EventEmitter<any>();
 
