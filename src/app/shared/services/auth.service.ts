@@ -1,7 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { Location } from '@angular/common';
 import { Http } from '@angular/http';
-import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/map';
@@ -10,7 +9,7 @@ import IAppConfig from '../../../environments/IAppConfig'
 
 @Injectable()
 export class AuthService {
-  constructor(@Inject(APP_CONFIG_TOKEN) private APP_CONFIG: IAppConfig,private http: Http, private router: Router) { }
+  constructor(@Inject(APP_CONFIG_TOKEN) private APP_CONFIG: IAppConfig,private http: Http) { }
 
   getToken() {
     return this.http.get(`/authentication/token/new`)
@@ -24,18 +23,8 @@ export class AuthService {
 
   getSession(request_token: string) {
     return this.http.get(`/authentication/session/new?request_token=${request_token}`)
-      .map((response: any) => {
-        let session_id = response.json().session_id;
-        if (session_id) {
-          localStorage.setItem('session_id', session_id);
-          this.router.navigate(['home']);
-          return false;
-        }
-        else {
-          alert('No session_id received!');
-          return true;
-        }
-      });
+      .map((response: any) =>  response.json().session_id
+      );
   }
 
 }
