@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DirectorySearchComponent } from './directory-search.component';
 import { SharedModule } from '../../shared'
+import { SearchService } from '../../shared/services'
 import { DirectorySearchListComponent } from './directory-search-list/directory-search-list.component';
 
 @NgModule({
@@ -11,6 +12,7 @@ import { DirectorySearchListComponent } from './directory-search-list/directory-
         ReactiveFormsModule,
         SharedModule
     ],
+    providers: [SearchService],
     declarations: [
         DirectorySearchComponent,
         DirectorySearchListComponent
