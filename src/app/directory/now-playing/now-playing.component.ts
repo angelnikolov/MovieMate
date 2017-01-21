@@ -16,6 +16,13 @@ export class NowPlayingComponent implements OnInit {
     this.router.navigate([{ outlets: { modal: String(movie.id) } }]);
   }
 
+  loadMoreMovies(page: number) {
+    this.movieService
+      .getNowPlayingMovies(page).subscribe((res: any) => {
+        this.nowPlaying = [...this.nowPlaying, ...res];
+      })
+  }
+
 
   public toggleMovieFavorite(toggleMovie: any) {
     this.movieService.favorMovie(toggleMovie).subscribe(() => {

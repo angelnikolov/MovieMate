@@ -17,6 +17,13 @@ export class FavoritedComponent implements OnInit {
     this.router.navigate([{ outlets: { modal: String(movie.id) } }]);
   }
 
+  loadMoreMovies(page: number) {
+    this.movieService
+      .getAccountFavoriteMovies(page).subscribe((res: any) => {
+        this.favorited = [...this.favorited, ...res];
+      })
+  }
+
   public toggleMovieFavorite(toggleMovie: any) {
     this.movieService.favorMovie(toggleMovie).subscribe(() => {
       let foundMovie = this.favorited.find((movie) => movie.id === toggleMovie.id);

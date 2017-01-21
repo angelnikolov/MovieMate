@@ -1,1 +1,1 @@
-<mm-movie-listing [movies]="nowPlaying" (onMovieAddedToFavorites)="toggleMovieFavorite($event)" (onMovieSelected)="selectMovie($event)"></mm-movie-listing>
+<mm-movie-listing [movies]="nowPlaying" (onMoreMoviesLoaded)="loadMoreMovies($event)" (onMovieAddedToFavorites)="toggleMovieFavorite($event)" (onMovieSelected)="selectMovie($event)"></mm-movie-listing>

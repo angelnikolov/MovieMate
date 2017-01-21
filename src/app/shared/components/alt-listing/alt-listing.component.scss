@@ -2,12 +2,22 @@
     flex: 0.2;
     z-index: 1;
     background-color: #dedede;
-    overflow: auto;
     display: flex;
     flex-direction: column;
     padding-top: 1rem;
     box-shadow: -11px 0px 30px 1px rgba(0, 0, 0, 0.19), -3px 0px 6px rgba(0, 0, 0, 0.53);
-    transform: translateX(10%);
+        transform: translateX(10%);
+}
+
+.listing{
+    &__scroller{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        overflow: auto;
+        height: 100%;
+        align-items: center;
+    }
 }
 
 mm-movie-card{

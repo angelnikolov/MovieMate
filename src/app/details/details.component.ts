@@ -20,6 +20,7 @@ export class DetailsComponent implements OnInit {
 
   public isOverlayShown: boolean = false;
   public movie: any;
+  private additionalMoviesType: string;
   @HostBinding('@routeAnimation') public routeAnimation: void;
   @HostListener('@routeAnimation.done')
   toggleOverlay() {
@@ -36,12 +37,14 @@ export class DetailsComponent implements OnInit {
   }
 
   public getSimilarMovies(movie: any) {
+    this.additionalMoviesType = 'similar';
     this.movieService.getSimilarMovies(movie).subscribe((similarMovies) => {
       this.movie = Object.assign({}, this.movie, { additionalMovies: similarMovies });
     })
   }
 
   public getRecommendedMovies(movie: any) {
+    this.additionalMoviesType = 'recommended';
     this.movieService.getRecommendedMovies(movie).subscribe((recommendedMovies) => {
       this.movie = Object.assign({}, this.movie, { additionalMovies: recommendedMovies });
     })
@@ -62,6 +65,20 @@ export class DetailsComponent implements OnInit {
     }, 100);
   }
 
+  loadMoreMovies(page: number) {
+    if (this.additionalMoviesType === 'similar') {
+      this.movieService
+        .getSimilarMovies(this.movie, page).subscribe((res: any) => {
+          this.movie = Object.assign({}, this.movie, { additionalMovies: [...this.movie.additionalMovies, ...res] });
+        })
+    }
+    else if (this.additionalMoviesType === 'recommended') {
+      this.movieService
+        .getRecommendedMovies(this.movie, page).subscribe((res: any) => {
+          this.movie = Object.assign({}, this.movie, { additionalMovies: [...this.movie.additionalMovies, ...res] });
+        })
+    }
+  }
   ngOnInit() {
     this.route.params
       .pluck('id')

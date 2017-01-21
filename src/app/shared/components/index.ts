@@ -8,6 +8,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { FavoriteButtonComponent } from './favorite-button/favorite-button.component';
 import { ImageComponent } from './image/image.component';
 
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import { DirectivesModule } from '../directives'
 import { PipesModule } from '../pipes'
 
@@ -15,7 +16,8 @@ import { PipesModule } from '../pipes'
   imports: [
     CommonModule,
     DirectivesModule,
-    PipesModule
+    PipesModule,
+    InfiniteScrollModule
   ],
   declarations: [
     MovieListingComponent,

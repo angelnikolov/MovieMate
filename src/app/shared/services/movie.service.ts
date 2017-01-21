@@ -7,18 +7,19 @@ import { AccountService } from './account.service';
 export class MovieService {
     constructor(private http: Http, private accountService: AccountService) { }
 
-    public getNowPlayingMovies() {
-        return this.getFavoriteByType('now_playing');
+    public getNowPlayingMovies(page?: number) {
+        return this.getFavoriteByType('now_playing', page);
     }
-    public getPopularMovies() {
-        return this.getFavoriteByType('popular');
+    public getPopularMovies(page?: number) {
+        return this.getFavoriteByType('popular', page);
     }
 
-    public getAccountFavoriteMovies() {
+    public getAccountFavoriteMovies(page?: number) {
+        var page = page ? page : 1;
         return this.accountService.getAccountId()
             // .delay(5000)
             .switchMap((account_id: number) =>
-                this.http.get(`/account/${account_id}/favorite/movies?language=en-US&page=1`))
+                this.http.get(`/account/${account_id}/favorite/movies?language=en-US&page=${page}`))
             .map((response: any) =>
                 response.json()
                     .results.map((movie: any) => {
@@ -52,21 +53,24 @@ export class MovieService {
     }
 
 
-    public getSimilarMovies(movie: any) {
-        return this.http.get(`/movie/${movie.id}/similar?language=en-US&page=1`)
+    public getSimilarMovies(movie: any, page?: number) {
+        var page = page ? page : 1;
+        return this.http.get(`/movie/${movie.id}/similar?language=en-US&page=${page}`)
             .switchMap((response: any) => Observable.of(response.json().results));
     }
 
-    public getRecommendedMovies(movie: any) {
-        return this.http.get(`/movie/${movie.id}/recommendations?language=en-US&page=1`)
+    public getRecommendedMovies(movie: any, page?: number) {
+        var page = page ? page : 1;
+        return this.http.get(`/movie/${movie.id}/recommendations?language=en-US&page=${page}`)
             .switchMap((response: any) => Observable.of(response.json().results));
     }
 
-    private getFavoriteByType(type: string) {
-        return this.getAccountFavoriteMovies()
+    private getFavoriteByType(type: string, page?: number) {
+        var page = page ? page : 1;
+        return this.getAccountFavoriteMovies(page)
             .map((movies: Array<any>) => movies.map((movie: any) => movie.id))
             .switchMap((accountFavoriteIds: any) => {
-                return this.http.get(`/movie/${type}?language=en-US&page=1`)
+                return this.http.get(`/movie/${type}?language=en-US&page=${page}`)
                     .map((response: any) => {
                         return response.json().results.map((movie: any) => {
                             movie.isFavorited = (accountFavoriteIds.indexOf(movie.id) !== -1 ? true : false);

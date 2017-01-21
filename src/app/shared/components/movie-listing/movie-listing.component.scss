@@ -1,9 +1,20 @@
 :host{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     padding-top: 1.5rem;
     flex: 1;
+    display: flex;
+    height: 100%;
+    
+}
+.listing{
+    &__scroller{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 1;
+        overflow: auto;
+        height: 100%;
+        align-items: center;
+    }
 }
 img{
     max-width: 250px;

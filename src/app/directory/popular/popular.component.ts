@@ -16,6 +16,13 @@ export class PopularComponent implements OnInit {
     this.router.navigate([{ outlets: { modal: String(movie.id) } }]);
   }
 
+  loadMoreMovies(page: number) {
+    this.movieService
+      .getPopularMovies(page).subscribe((res: any) => {
+        this.popular = [...this.popular, ...res];
+      })
+  }
+
 
   public toggleMovieFavorite(toggleMovie: any) {
     this.movieService.favorMovie(toggleMovie).subscribe(() => {

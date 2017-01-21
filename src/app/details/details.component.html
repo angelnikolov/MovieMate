@@ -1,8 +1,9 @@
 <mm-alt-listing 
     *ngIf="movie?.additionalMovies"
-    [@slideAnimation]
     (onMovieSelected)="selectMovie($event)"
+    (onMoreMoviesLoaded)="loadMoreMovies($event)"
     [movies]="movie?.additionalMovies"
+    [@slideAnimation]
 >
 </mm-alt-listing>
 

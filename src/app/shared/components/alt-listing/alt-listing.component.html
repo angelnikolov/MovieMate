@@ -1,9 +1,16 @@
-<mm-movie-card  
-    class="center-xs"
-    *ngFor="let movie of movies" 
-    [movie]="movie"
-    (click)="selectMovie(movie)"
-    [size]="'small'"
-> 
-</mm-movie-card>
+<section
+    class="listing__scroller"
+    infinite-scroll
+    (scrolled)="onScroll()"
+    [scrollWindow]="false"
+>
+    <mm-movie-card  
+        class="center-xs"
+        *ngFor="let movie of movies" 
+        [movie]="movie"
+        (click)="selectMovie(movie)"
+        [size]="'small'"
+    > 
+    </mm-movie-card>
 
+</section>

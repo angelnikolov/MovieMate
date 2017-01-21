@@ -1,15 +1,22 @@
-<article class="col-xs-2 card-holder"
-    *ngFor="let movie of movies; trackBy: trackByFn" 
+<section
+    class="listing__scroller"
+    infinite-scroll
+    (scrolled)="onScroll()"
+    [scrollWindow]="false"
 >
-    <mm-movie-card  
-    mmTint
-    class="main" 
-    [movie]="movie"
-    [@popIn]
-    (onMovieSelected)="selectMovie($event)"
-    (onMovieAddedToFavorites)="addMovieToFavorites($event)"
-    > 
-    </mm-movie-card>
-</article>
-
+    <article class="col-xs-2 card-holder"
+        *ngFor="let movie of movies; trackBy: trackByFn" 
+    >
+        <mm-movie-card  
+        mmTint 
+        class="main" 
+        [movie]="movie"
+        [@popIn]
+        (onMovieSelected)="selectMovie($event)"
+        (onMovieAddedToFavorites)="addMovieToFavorites($event)"
+        > 
+        </mm-movie-card>
+        
+    </article>
+</section>
 <mm-spinner class="big" *ngIf="!movies"></mm-spinner>

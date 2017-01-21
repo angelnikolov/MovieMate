@@ -24,7 +24,6 @@ export class ImageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    debugger;
   }
 
 }

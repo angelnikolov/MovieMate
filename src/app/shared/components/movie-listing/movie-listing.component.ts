@@ -12,6 +12,9 @@ export class MovieListingComponent implements OnInit {
   @Input() movies: Array<any>;
   @Output() onMovieSelected: EventEmitter<any> = new EventEmitter<any>();
   @Output() onMovieAddedToFavorites: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onMoreMoviesLoaded: EventEmitter<number> = new EventEmitter<number>();
+
+  private page: number = 1;
 
   trackByFn(index: number, movie: any) {
     return movie.id;
@@ -23,6 +26,11 @@ export class MovieListingComponent implements OnInit {
 
   addMovieToFavorites(id: number) {
     this.onMovieAddedToFavorites.emit(id);
+  }
+
+  onScroll(){
+    this.page++;
+    this.onMoreMoviesLoaded.emit(this.page);
   }
 
   constructor() { }
