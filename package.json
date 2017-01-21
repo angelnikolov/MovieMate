@@ -6,6 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:bg": "ng serve --aot --locale=bg --i18nFormat=xlf --i18nFile=.\\src\\translations\\messages.bg.xlf",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",

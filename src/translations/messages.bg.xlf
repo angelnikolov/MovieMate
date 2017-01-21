@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="426b4cb0e8a59acc67bd7a7f86f27f7184b39d73" datatype="html">
+        <source> Now Playing Movies</source>
+        <target> В кината </target>
+      </trans-unit>
+      <trans-unit id="4ca8e335d4f7c13e7eab1790a36c3e8372da2582" datatype="html">
+        <source> Favorited Movies </source>
+        <target> Фаворити </target>
+      </trans-unit>
+      <trans-unit id="cd25e0db026fe7442df0b9ca860dfd625521f746" datatype="html">
+        <source> 
+              Popular Movies </source>
+        <target> Популярни </target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

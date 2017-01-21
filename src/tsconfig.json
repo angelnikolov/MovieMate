@@ -1,11 +1,18 @@
 {
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ],
   "compilerOptions": {
     "baseUrl": "",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": true,
-    "lib": ["es6", "dom"],
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "mapRoot": "./",
     "module": "es6",
     "moduleResolution": "node",
