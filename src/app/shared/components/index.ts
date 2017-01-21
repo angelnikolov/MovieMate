@@ -7,6 +7,7 @@ import { AltListingComponent } from './alt-listing/alt-listing.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { FavoriteButtonComponent } from './favorite-button/favorite-button.component';
 import { ImageComponent } from './image/image.component';
+import { FabButtonComponent } from './fab-button/fab-button.component';
 
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import { DirectivesModule } from '../directives'
@@ -26,7 +27,8 @@ import { PipesModule } from '../pipes'
     OverlayComponent,
     SpinnerComponent,
     FavoriteButtonComponent,
-    ImageComponent
+    ImageComponent,
+    FabButtonComponent
   ],
   exports: [
     MovieListingComponent,
@@ -35,7 +37,8 @@ import { PipesModule } from '../pipes'
     OverlayComponent,
     SpinnerComponent,
     FavoriteButtonComponent,
-    ImageComponent
+    ImageComponent,
+    FabButtonComponent
   ]
 })
 export class ComponentsModule { }

@@ -4,12 +4,14 @@
     (scrolled)="onScroll()"
     [scrollWindow]="false"
 >
+    <h3 class="listing__title">{{title}}</h3>
     <mm-movie-card  
-        class="center-xs"
+        [class]="'center-xs col-xs-12 '+ cardClasses"
         *ngFor="let movie of movies" 
         [movie]="movie"
         (click)="selectMovie(movie)"
         [size]="'small'"
+        [@popIn]="'active'"
     > 
     </mm-movie-card>
 

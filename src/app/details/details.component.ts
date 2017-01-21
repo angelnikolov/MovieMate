@@ -5,13 +5,13 @@ import 'rxjs/add/operator/pluck';
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs';
 import { MovieService } from '../shared/services'
-import { routeAnimation, slideAnimation, fadeInAnimation } from '../shared/animations';
+import { routeAnimation, slideLeftAnimation, fadeInAnimation } from '../shared/animations';
 
 @Component({
   selector: 'mm-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss'],
-  animations: [routeAnimation, fadeInAnimation, slideAnimation]
+  animations: [routeAnimation, fadeInAnimation, slideLeftAnimation]
 })
 export class DetailsComponent implements OnInit {
 

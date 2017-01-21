@@ -11,7 +11,7 @@
         mmTint 
         class="main" 
         [movie]="movie"
-        [@popIn]
+        [@popIn]="'active'"
         (onMovieSelected)="selectMovie($event)"
         (onMovieAddedToFavorites)="addMovieToFavorites($event)"
         > 

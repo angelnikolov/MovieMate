@@ -17,7 +17,6 @@ export class MovieCardComponent implements OnInit {
     this.onMovieSelected.emit(this.movie);
   }
   addToFavorites($event: Event, movie: any) {
-    debugger;
     $event.stopPropagation();
     // this.movie.isFavorited = !this.movie.isFavorited;
     this.onMovieAddedToFavorites.emit(movie);

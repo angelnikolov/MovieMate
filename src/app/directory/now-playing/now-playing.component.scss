@@ -2,3 +2,23 @@
     height: 100%;
     display: flex;
 }
+.closer{
+    z-index: 22;
+    position: absolute;
+    top: 0px;
+    left: 350px;
+    width: 100px;
+    height: 50px;
+}
+.organizer{
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 220px;
+    height: 100%;
+    transform: translateX(0%);
+    background-color: #f9f9f9;
+    mm-movie-card{
+        box-shadow: -11px 0px 30px 1px rgba(0, 0, 0, 0.19), -3px 0px 6px rgba(0, 0, 0, 0.53);
+    }
+}
