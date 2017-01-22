@@ -3,14 +3,26 @@
     (onMoreMoviesLoaded)="loadMoreMovies($event)" 
     (onMovieAddedToFavorites)="toggleMovieFavorite($event)"
     (onMovieSelected)="selectMovie($event)"
-></mm-movie-listing>
-<mm-fab-button (click)="organizeMovieNight()" [count]="selectedMovies.length"></mm-fab-button>
-<div class="closer" (click)="organizing=false">Close this sidebar</div>
-<mm-alt-listing 
-    class="organizer"
-    [cardClasses]="'card--shadowed'"
-    *ngIf="organizing" 
-    [movies]="selectedMovies"
-    [title]="'Choose movies for a movie night'"
-    [@slideRightAnimation]
-></mm-alt-listing>
+>
+</mm-movie-listing>
+<mm-fab-button (click)="organizeMovieNight()" [count]="selectedMovies.length">
+    <div>
+        {{selectedMovies.length ? selectedMovies.length : '+'}}
+    </div>
+</mm-fab-button>
+<div class="button--close" (click)="organizing=false" *ngIf="organizing">
+    X
+</div>
+
+<section class="organizer-holder" 
+    *ngIf="organizing"
+    [@slideRightAnimation]>
+    <mm-alt-listing 
+        class="organizer"
+        [cardClasses]="'card--shadowed'"
+        [movies]="selectedMovies"
+        [title]="'Choose movies for a movie night'"
+    >
+    </mm-alt-listing>
+    <button class="button--send" [disabled]="selectedMovies.length===0">ORGANIZE</button>
+</section>

@@ -31,3 +31,33 @@ body, html{
     font-weight: bold;
     color: #222;
 }
+
+.button--close{
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 20px;
+    background: #fff;
+    color: #42A5F5;
+    border: 2px solid #42A5F5;
+    border-radius: 100%;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+.button--send{
+    text-align: center;
+    font-size: 20px;
+    background: #42A5F5;
+    color: #fff;
+    font-family: HelveticaNeue;
+    font-weight: inherit;
+    border: 0;
+    cursor: pointer;
+    z-index: 1;
+    letter-spacing: 3px;
+    
+}
+.button--send:disabled{
+    opacity: 0.7;
+}
