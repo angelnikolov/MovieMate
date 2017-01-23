@@ -14,7 +14,6 @@ import { AuthService, MovieService, AccountService, LocalStorageService, HttpCli
 import { AuthGuard, AnonymousOnlyGuard } from './shared/guards';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { APP_CONFIG_TOKEN } from './shared/opaques'
-
 import { APP_CONFIG } from '../environments/environment';
 import IAppConfig from '../environments/IAppConfig';
 

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { NowPlayingComponent } from './now-playing.component';
+import { OrganizerFormComponent } from './organizer-form/organizer-form.component';
 import { SharedModule } from '../../shared'
 
 const nowPlayingRoutes: Routes = [
@@ -19,6 +20,7 @@ const nowPlayingRoutes: Routes = [
   exports: [],
   declarations: [
     NowPlayingComponent,
+    OrganizerFormComponent
   ]
 })
 export class NowPlayingModule { }

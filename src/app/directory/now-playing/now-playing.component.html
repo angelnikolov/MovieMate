@@ -24,5 +24,13 @@
         [title]="'Choose movies for a movie night'"
     >
     </mm-alt-listing>
-    <button class="button--send" [disabled]="selectedMovies.length===0">ORGANIZE</button>
+    <button class="button--send" 
+        [disabled]="selectedMovies.length===0"
+        (click)="selectionFinalized = true"
+    >ORGANIZE</button>
+    <mm-organizer-form 
+        *ngIf="selectionFinalized"
+        [@slideRightAnimation]
+    >
+    </mm-organizer-form>
 </section>

@@ -15,6 +15,7 @@ export class NowPlayingComponent implements OnInit {
   private nowPlaying: Array<any>;
   public selectedMovies: Array<any> = [];
   public organizing: boolean = false;
+  public selectionFinalized: boolean = false;
   public selectMovie(movie: any) {
     if (!this.organizing) {
       this.router.navigate([{ outlets: { modal: String(movie.id) } }]);
