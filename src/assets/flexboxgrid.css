@@ -721,13 +721,13 @@
   }
 
   .col-lg-2 {
-    -ms-flex-preferred-size: 16.667%;
+    -ms-flex-preferred-: 16.667%;
     flex-basis: 16.667%;
     max-width: 16.667%;
   }
 
   .col-lg-3 {
-    -ms-flex-preferred-size: 25%;
+    -ms-flex-preferred-: 25%;
     flex-basis: 25%;
     max-width: 25%;
   }

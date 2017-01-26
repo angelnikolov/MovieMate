@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { MovieListingComponent } from './movie-listing/movie-listing.component'
 import { MovieCardComponent } from './movie-card/movie-card.component'
 import { OverlayComponent } from './overlay/overlay.component'
@@ -18,7 +20,8 @@ import { PipesModule } from '../pipes'
     CommonModule,
     DirectivesModule,
     PipesModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    FormsModule
   ],
   declarations: [
     MovieListingComponent,
