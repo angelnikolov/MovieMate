@@ -16,7 +16,6 @@ export class AuthService {
       .map((response: any) => {
         let token = response.json().request_token
         let redirectTo = `${this.APP_CONFIG.APP_URL}/login`;
-        debugger;
         location.href = `${this.APP_CONFIG.THEMOVIE_DB_BASE_URL}/authenticate/${token}?redirect_to=${redirectTo}`, ``;
       });
   }
