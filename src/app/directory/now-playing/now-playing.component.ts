@@ -21,8 +21,8 @@ export class NowPlayingComponent implements OnInit {
       this.router.navigate([{ outlets: { modal: String(movie.id) } }]);
     }
     else {
-      if(this.selectedMovies.indexOf(movie)==-1)
-      this.selectedMovies = [movie, ...this.selectedMovies];
+      if (this.selectedMovies.indexOf(movie) == -1)
+        this.selectedMovies = [movie, ...this.selectedMovies];
     }
   }
 
