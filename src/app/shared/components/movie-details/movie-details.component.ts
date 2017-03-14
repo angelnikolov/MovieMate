@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges, Input, Output, HostListener, ChangeDetectionStrategy, EventEmitter, SimpleChanges, ElementRef } from '@angular/core';
 (window as any).Vibrant = require('node-vibrant');
 declare var Vibrant: any;
+declare var require: any
 @Component({
   selector: 'mm-movie-details',
   templateUrl: './movie-details.component.html',
