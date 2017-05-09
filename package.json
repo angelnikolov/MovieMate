@@ -5,7 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host 10.0.0.83 --port 8090",
     "start:bg": "ng serve --aot --locale=bg --i18nFormat=xlf --i18nFile=.\\src\\translations\\messages.bg.xlf",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
