@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'mm-favorite-button',
   templateUrl: './favorite-button.component.html',
-  styleUrls: ['./favorite-button.component.scss']
+  styleUrls: ['./favorite-button.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FavoriteButtonComponent implements OnInit {
   @Input() isFavorited: Boolean;

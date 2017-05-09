@@ -30,6 +30,7 @@
     >ORGANIZE</button>
     <mm-organizer-form 
         *ngIf="selectionFinalized"
+        (onInvitationsSent)="organizing=false"
         [@slideRightAnimation]
     >
     </mm-organizer-form>

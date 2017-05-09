@@ -28,7 +28,7 @@ export class MovieListingComponent implements OnInit {
     this.onMovieAddedToFavorites.emit(id);
   }
 
-  onScroll(){
+  onScroll() {
     this.page++;
     this.onMoreMoviesLoaded.emit(this.page);
   }

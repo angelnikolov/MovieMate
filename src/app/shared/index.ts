@@ -13,7 +13,7 @@ import { PipesModule } from './pipes'
         DirectivesModule,
         PipesModule
     ],
-    exports:[
+    exports: [
         CommonModule,
         ComponentsModule,
         DirectivesModule,

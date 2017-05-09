@@ -1,0 +1,7 @@
+<h3 class="title"> Add a bit more details for the movie night</h3>
+<form class="row center-xs" (submit)="sendInvitations()">
+  <input autoFocus="true" class="input" type="text" name="location" placeholder="Location" />
+  <input class="input" required [(ngModel)]="date" placeholder="Date" name="date" ng2-datetime-picker date-only="true" />
+  <textarea class="input textarea" placeholder="Description"></textarea>
+  <button type="submit" class="input inverted" >Send</button>
+</form>
